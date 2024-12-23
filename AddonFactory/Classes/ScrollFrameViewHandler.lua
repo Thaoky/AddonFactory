@@ -27,6 +27,10 @@ oop:Create("ScrollFrameViewHandler", {
 		self.view = view
 	end,
 	
+	GetLastMaxRows = function(self)
+		return self.maxDisplayedRows
+	end,
+	
 	Update = function(self, isResizing, onRowUpdate)
 		local scrollFrame = self.scrollFrame
 		local numRows = scrollFrame.numRows
@@ -34,7 +38,9 @@ oop:Create("ScrollFrameViewHandler", {
 		local viewSize = #self.view
 
 		-- This handles the resize
-		local maxDisplayedRows = math.floor(scrollFrame:GetHeight() / self.rowHeight)
+		self.maxDisplayedRows = math.floor(scrollFrame:GetHeight() / self.rowHeight)
+		local maxRows = self.maxDisplayedRows
+		
 		-- print(format("Scroll height: %d", scrollFrame:GetHeight()))
 		-- print(format("frame height: %d, width: %d", frame:GetHeight(), frame:GetWidth()))
 		-- print(maxDisplayedRows)
@@ -45,7 +51,7 @@ oop:Create("ScrollFrameViewHandler", {
 			local line = rowIndex + offset
 			
 			-- If the line is visible ..
-			if line <= viewSize and (rowIndex <= maxDisplayedRows) then
+			if line <= viewSize and (rowIndex <= maxRows) then
 				if not (isResizing and rowFrame:IsVisible()) then
 					onRowUpdate(rowFrame, line)
 				end
@@ -56,8 +62,6 @@ oop:Create("ScrollFrameViewHandler", {
 			end
 		end
 
-		scrollFrame:Update(viewSize, maxDisplayedRows)
-		
-		return maxDisplayedRows
+		scrollFrame:Update(viewSize, maxRows)
 	end,
 })
