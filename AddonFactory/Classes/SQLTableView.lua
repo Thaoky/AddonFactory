@@ -66,4 +66,8 @@ oop:Create("SQLTableView", {
 		return self.source:GetRow(self.pointers[index])
 	end,
 	
+	GetSize = function(self)
+		return #self.pointers
+	end,
+	
 })

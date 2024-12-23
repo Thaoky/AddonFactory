@@ -58,6 +58,10 @@ oop:Create("SQLTable", {
 		return self.data[index]
 	end,
 	
+	GetSize = function(self)
+		return #self.data
+	end,
+	
 	IterateRows = function(self, action, condition)
 		--[[
 			Call: obj:IterateRows(
