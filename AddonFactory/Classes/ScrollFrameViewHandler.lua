@@ -23,6 +23,10 @@ oop:Create("ScrollFrameViewHandler", {
 		self.rowHeight = scrollFrame:GetRow(1):GetHeight()
 	end,
 	
+	SetView = function(self, view)
+		self.view = view
+	end,
+	
 	Update = function(self, isResizing, onRowUpdate)
 		local scrollFrame = self.scrollFrame
 		local numRows = scrollFrame.numRows
@@ -53,5 +57,7 @@ oop:Create("ScrollFrameViewHandler", {
 		end
 
 		scrollFrame:Update(viewSize, maxDisplayedRows)
+		
+		return maxDisplayedRows
 	end,
 })
