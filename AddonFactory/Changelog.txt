@@ -2,7 +2,7 @@ AddonFactory Changelog (dates in dd/mm/yyyy)
 ======================
 
 
-Version 2025.02.23 (23/02/2025)
+Version 2025.02.28 (28/02/2025)
 
 - Added LibBit64.
 
