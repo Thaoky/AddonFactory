@@ -2,6 +2,10 @@ AddonFactory Changelog (dates in dd/mm/yyyy)
 ======================
 
 
+Version 2025.09.17 (17/09/2025)
+
+- Added the FilterPipeline class.
+
 Version 2025.08.21 (21/08/2025)
 
 - Updated ToC for Mists of Pandaria and 11.2.
