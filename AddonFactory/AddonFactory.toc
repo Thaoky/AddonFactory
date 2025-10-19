@@ -4,7 +4,7 @@
 
 ## Notes: AddonFactory is a collection of templates for rapid UI development.
 ## Author: Thaoky (EU-Marécages de Zangar)
-## Version: 2025.09.25
+## Version: 2025.10.19
 
 Libs\LibStub\LibStub.lua
 Libs\LibBit64\LibBit64.lua
