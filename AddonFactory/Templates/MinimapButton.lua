@@ -2,15 +2,30 @@ local MVC = LibStub("LibMVC-1.0")
 
 MVC:Controller("AddonFactory.MinimapButton", function()
 
-	local uiScale = UIParent:GetScale()
-
 	local function GetIconAngle()
 		local xPos, yPos = GetCursorPosition()
+		
+		-- 12.x : Get the ui scale inside this function, Blizzard no longer properly returns it outside.
+		local uiScale = UIParent:GetScale()
 
-		xPos = Minimap:GetLeft() - xPos/uiScale + 70 
-		yPos = yPos/uiScale - Minimap:GetBottom() - 70 
+		-- X-Axis
+		local left = Minimap:GetLeft()
+		local right = Minimap:GetRight()
+		local offsetX = (right - left) / 2
 
+		-- Y-Axis
+		local top = Minimap:GetTop()
+		local bottom = Minimap:GetBottom()
+		local offsetY = (top - bottom) / 2
+
+		-- Convert cursor coordinates
+		xPos = left - xPos/uiScale + offsetX 
+		yPos = yPos/uiScale - bottom - offsetY 
+
+		-- Get the angle
 		local iconAngle = math.deg(math.atan2(yPos, xPos))
+		
+		-- Clamp it to 0..360
 		if iconAngle < 0 then
 			iconAngle = iconAngle + 360
 		end
@@ -60,7 +75,7 @@ MVC:Controller("AddonFactory.MinimapButton", function()
 				local iconAngle = GetIconAngle()
 				local options = _G[info.options].Minimap
 				options.IconAngle = iconAngle
-
+				
 				frame:Move()
 
 				if info.onUpdate then

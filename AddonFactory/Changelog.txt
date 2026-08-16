@@ -2,6 +2,11 @@ AddonFactory Changelog (dates in dd/mm/yyyy)
 ======================
 
 
+Version 2026.08.16 (16/08/2026)
+
+- Updated ToC for 12.1.
+- Fixed minimap button positioning when using the right mouse button to move it.
+
 Version 2026.01.21 (21/01/2026)
 
 - Updated ToC for 12.0.
