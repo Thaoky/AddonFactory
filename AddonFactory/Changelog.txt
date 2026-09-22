@@ -2,6 +2,10 @@ AddonFactory Changelog (dates in dd/mm/yyyy)
 ======================
 
 
+Version 2026.09.22 (22/09/2026)
+
+- Updated old API calls in preparation of 12.1.5 (GetItemInfo, GetItemIcon, ...), and of WoW Forever.
+
 Version 2026.08.16 (16/08/2026)
 
 - Updated ToC for 12.1.
