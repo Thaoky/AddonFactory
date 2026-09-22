@@ -44,12 +44,12 @@ MVC:Service("AddonFactory.SimpleHTML", function()
 		end,
 
 		GetItemLink = function(itemID)
-			local link = select(2, GetItemInfo(itemID))
+			local link = select(2, C_Item.GetItemInfo(itemID))
 			return link or format("item:%d", itemID)
 		end,
 		
 		GetItemIconLink = function(itemID)
-			local _, link, _, _, _, _, _, _, _, icon = GetItemInfo(itemID)
+			local _, link, _, _, _, _, _, _, _, icon = C_Item.GetItemInfo(itemID)
 
 			if link and icon then
 				local _, endPos = string.find(link, "|h")
@@ -66,7 +66,7 @@ MVC:Service("AddonFactory.SimpleHTML", function()
 		end,
 		
 		GetItemIconAndLink = function(itemID, count)
-			local name, link, _, _, _, _, _, _, _, icon = GetItemInfo(itemID)
+			local name, link, _, _, _, _, _, _, _, icon = C_Item.GetItemInfo(itemID)
 
 			if link and icon then
 				local _, endPos = string.find(link, "|h")
@@ -122,7 +122,7 @@ MVC:Service("AddonFactory.SimpleHTML", function()
 		end,
 		
 		AddItemLink = function(itemID)
-			local link = select(2, GetItemInfo(itemID))
+			local link = select(2, C_Item.GetItemInfo(itemID))
 			link = link or format("item:%d", itemID)
 			
 			TableInsert(content, format("<p>%s</p>", link))
