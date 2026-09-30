@@ -1,4 +1,4 @@
-## Interface: 120100, 50504, 20505, 11508
+## Interface: 120100, 50504, 20505, 11508, 16001
 ## Title: AddonFactory by |cFF69CCF0Thaoky|r
 ## IconTexture: Interface\Icons\Achievement_guildperk_workingovertime
 

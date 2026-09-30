@@ -117,3 +117,12 @@ function addon:ReleaseTable(t)
     table.insert(tablePool, t)
 end
 
+
+-- ** Character Identification **
+function addon:GetPlayerName()
+	local firstName, lastName = UnitName("player")
+
+	-- For Mailine, just return the first name
+	-- For Forever, return "firstName lastName"
+	return lastName and format("%s %s", firstName, lastName) or firstName
+end
