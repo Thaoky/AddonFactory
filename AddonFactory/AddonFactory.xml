@@ -30,6 +30,7 @@
 	<Include file="Templates\MessageBox.xml"/>
 	<Include file="Templates\MinimapButton.xml"/>
 	<Include file="Templates\OptionsSlider.xml"/>
+	<Include file="Templates\PanelTabButton.xml"/>
 	<Include file="Templates\ScrollFrames.xml"/>
 	<Include file="Templates\ToggleButton.xml"/>
 	<Include file="Templates\AuctionHouseUI\CategoriesList.xml"/>

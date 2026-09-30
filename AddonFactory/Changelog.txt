@@ -2,6 +2,10 @@ AddonFactory Changelog (dates in dd/mm/yyyy)
 ======================
 
 
+Version 2026.09.30 (30/09/2026)
+
+- Added GetPlayerName() to support surnames in WoW Forever.
+
 Version 2026.09.22 (22/09/2026)
 
 - Updated old API calls in preparation of 12.1.5 (GetItemInfo, GetItemIcon, ...), and of WoW Forever.
