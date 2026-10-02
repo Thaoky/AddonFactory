@@ -4,7 +4,7 @@
 
 ## Notes: AddonFactory is a collection of templates for rapid UI development.
 ## Author: Thaoky (EU-Marécages de Zangar)
-## Version: 2026.09.30
+## Version: 2026.10.02
 
 ## Category: Libraries
 ## Category-deDE: Bibliotheken

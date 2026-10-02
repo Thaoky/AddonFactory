@@ -126,3 +126,26 @@ function addon:GetPlayerName()
 	-- For Forever, return "firstName lastName"
 	return lastName and format("%s %s", firstName, lastName) or firstName
 end
+
+
+-- ** Build Identification **
+local version = select(4, GetBuildInfo())
+addon.buildVersion = version
+
+if version >= 60000 then
+	addon.isRetail = true			-- retail = actual retail version
+	addon.isMainline = true			-- mainline = mainline client, shared between retail & forever
+elseif version >= 50000 then
+	addon.isMists = true
+elseif version >= 40000 then
+	addon.isCata = true
+elseif version >= 30000 then
+	addon.isWotLK = true
+elseif version >= 20000 then
+	addon.isTBC = true
+elseif version >= 16000 and version < 20000 then
+	addon.isForever = true
+	addon.isMainline = true
+else
+	addon.isClassic = true
+end
