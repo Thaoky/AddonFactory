@@ -2,6 +2,11 @@ AddonFactory Changelog (dates in dd/mm/yyyy)
 ======================
 
 
+Version 2026.10.14 (14/10/2026)
+
+- Updated ToC for 12.1.5.
+- Added GetAddOnVersionInfo().
+
 Version 2026.10.02 (02/10/2026)
 
 - Moved build information to AddonFactory to centralize version detection.
