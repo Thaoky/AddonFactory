@@ -149,3 +149,22 @@ elseif version >= 16000 and version < 20000 then
 else
 	addon.isClassic = true
 end
+
+
+function addon:GetAddOnVersionInfo(name)
+
+	--[[ 
+		Provides :
+			addon.Version = "v12.0.001"
+			--addon.VersionNum = 11 00 007
+			addon.VersionNum = 1200000
+		
+		Usage :
+			addon.Version, addon.VersionNum = AddonFactory:GetAddOnVersionInfo(addonName)
+	]]
+
+	local version = C_AddOns.GetAddOnMetadata(name, "Version")
+	local v1, v2, v3, vBeta = string.match(version, "(%d+).(%d+).(%d+)-*(.*)")
+	
+	return format("v%s", version), format("%d%02d%03d", v1, v2, v3, vBeta or "")
+end
